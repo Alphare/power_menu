@@ -34,7 +34,7 @@ def create_menu():
         with open("{}.yaml".format(os.path.join(CONFIG_FILE_DIR, CONFIG_FILE_NAME)), encoding='utf-8', mode='r') as f:
             import yaml
             config = yaml.load(f)
-    except FileNotFoundError:
+    except (ImportError, FileNotFoundError):
         with open("{}.json".format(os.path.join(CONFIG_FILE_DIR, CONFIG_FILE_NAME)), encoding='utf-8', mode='r') as f:
             import json
             config = json.load(f)
